@@ -29,7 +29,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-let port = 8080;
+let port = process.env.PORT || 8080;
 
 const dbUrl = process.env.ATLASDB_URL;
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
